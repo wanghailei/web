@@ -1,0 +1,194 @@
+:root {
+	box-sizing: border-box; /* Include padding in the height */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	line-height: 1.4;
+	overflow: hidden; /* Prevents the viewport from bouncing */
+}
+
+.shell {
+	display: grid;
+	grid-template-rows: 50px 40px 1fr;
+	width: 100vw;
+	height: 100vh;
+}
+
+.toolbar {
+	background-color: darkolivegreen;
+	flex-shrink: 0;
+}
+
+.control-bar {
+	flex-shrink: 0;
+	background-color: #f5f5f5;
+	display: grid;
+	grid-template-columns: 1fr 100px 100px;
+}
+
+.main {
+	display: flex;
+	background-color: red;
+	overflow-x: hidden; /* Enables horizontal scrolling within this div */
+	overflow-y: auto; /* Prevents vertical scrolling */
+	position: relative;
+	white-space: nowrap;
+}
+
+.plate {
+	display: flex;
+	gap: 10px; /* Gap between child divs */
+	flex-shrink: 0;
+	height: 100%;
+}
+
+.board {
+	display: inline-block;
+	width: 200px;
+	height: 1000px;
+	background-color: lightgreen;
+	flex-shrink: 0;
+
+}
+
+.board-head {
+	position: sticky;
+	left: 0;
+	z-index: 1; /* Ensures the board-head stays above other elements */
+	background-color: #E5E5E5;
+}
+.filter {
+
+}
+.scroll-button {
+	height: 40px;
+	width: 100px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ */
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+
+/* Hide visually and from screen readers. */
+.hidden, [hidden] {
+	display: none !important;
+}
+
+/* Hide visually and from screen readers, but maintain layout. */
+.invisible {
+	visibility: hidden;
+}
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+	/* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+	/* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+	*,
+	*::before,
+	*::after {
+		background: #fff !important;
+		color: #000 !important;
+		/* Black prints faster */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]::after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]::after {
+		content: " (" attr(title) ")";
+	}
+
+	/*
+	 * Don't show links that are fragment identifiers,
+	 * or use the `javascript:` pseudo protocol
+	 */
+	a[href^="#"]::after,
+	a[href^="javascript:"]::after {
+		content: "";
+	}
+
+	pre {
+		white-space: pre-wrap !important;
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
