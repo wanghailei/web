@@ -1,21 +1,27 @@
-:root {
+*,
+*::before,
+*::after {
 	box-sizing: border-box; /* Include padding in the height */
+}
+
+:root {
 	font-family: "JetBrains Mono", "Source Code Pro", "SF Mono", monospace;
-	font-size: 12px;
+	font-size: 13px;
 	--font-color-grey: #AAAAAA;
 	--font-weight-bold: 700;
 	--font-weight-medium: 500;
 	--backdrop-color: #F5F5F5;
-	--border-color-smoke: #F5F5F5;
+	--border-light: #F5F5F5;
+	--border-deep: 1px solid #AAAAAA;
 	--board-head-background: #FBFBFB;
+	--theme-color: #4C5200;
 }
 
-*,
-*::before,
-*::after {
-}
 
-html, body {
+html, body, .shell {
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
@@ -25,14 +31,12 @@ html, body {
 .shell {
 	display: grid;
 	grid-template-rows: 40px 1fr;
-	width: 100vw;
-	height: 100vh;
 }
 
 .head {
-	background-color: darkolivegreen;
+	background-color: var(--theme-color);
 	display: grid;
-	grid-template-columns: 40px 200px 1fr 200px 100px;
+	grid-template-columns: 40px 150px 200px 200px 1fr 200px 100px;
 }
 .head > div {
 	align-content: center;
@@ -46,11 +50,26 @@ html, body {
 	font-size: 1.25em;
 	text-align: center;
 }
-.boards {
+table, thead, tbody, tr, th, td {
+	padding: 0;
+	margin: 0;
+}
+table {
 	background-color: #f5f5f5;
 	border-collapse: separate; /* Ensure this is not 'collapse' */
 	border-spacing: 10px 0;
+	margin: 0 -10px; /* To remove the border-spacing on the most left and right of the table. */
 }
+
+thead {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+thead td div {
+	text-align: left;
+}
+
 td {
 	border-width: 0;
 	padding: 0 10px;
@@ -60,43 +79,49 @@ td {
 	text-overflow: ellipsis; /* Show an ellipsis if the text overflows */
 	white-space: nowrap; /* Prevent the text from wrapping */
 }
-
-/* Target the first column */
-td:nth-child(1) {
+/* The first column, aka, the index titles column. */
+td:first-child {
 	background-color: var(--board-head-background);
-	color: white;
-	font-weight: bold;
-	width: 200px;
 	position: sticky;
 	left: 0;
 	z-index: 1; /* Ensures the board-head stays above other elements */
+	border-right: 1px solid var(--border-light);
 }
-.timeline td, .unit-name td, .unit-info td, .index-title {
-	text-align:left;
+td:first-child > div {
+	width: 200px !important;
+	font-weight: bold;
+	text-align: left;
+	display: grid;
+	grid-template-columns: 30px 1fr !important;
 }
-.timeline {
+tbody td:first-child > div {
+	background-color: var(--board-head-background) !important;
+}
+
+/* The timeline row */
+thead tr:first-child td {
 	background-color: var(--backdrop-color);
 }
 .timeline td {
-	background-color: var(--backdrop-color);
 	color: var(--font-color-grey);
-	font-weight: var(--font-weight-medium);
+	font-weight: var(--font-weight-bold);
 }
-.unit-info td {
-	height:100px;
+
+.unit-info td div {
 	vertical-align: top;
+	text-align: left;
+	background-color: white;
 }
+/* The cell div of each td */
 td > div:first-child {
 	width: 300px;
 	height: 40px;
 	display: inline-grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 0;
-	border-bottom: 1px solid var(--border-color-smoke);
-	background-color: white;
+	border-bottom: 1px solid var(--border-light);
 }
 td > div {
-	height: 40px;
 	vertical-align: middle;
 	line-height: 40px;
 	text-align: right;
@@ -107,29 +132,19 @@ td > div {
 .fail {
 	color:red;
 }
-.unit-name td {
+
+.card-title-row td > div {
+	font-weight: var(--font-weight-bold);
+	border-top: var(--border-deep);
 }
 
-.card-title-row {
-	font-weight: var(--font-weight-bold);
-}
-.card-title-row div {
-	border-top: 1px solid black;
-}
-.card-normal-row, .card-normal-row .index-title {
-	font-weight: var(--font-weight-medium);
-}
-.card-final-row {
+.card-final-row td > div {
 	border-bottom: 0;
 }
 
-.index-title {
-}
-.index-title > div:first-child {
-	background-color: var(--board-head-background);
-	color: var(--font-color-grey);
-	text-align: left;
-	font-weight: bold;
+.sub-index-row > td:nth-child(1) div > div:nth-child(2) {
+	text-align: right;
+	font-weight: normal;
 }
 
 .dropdown::after {
@@ -138,23 +153,19 @@ td > div {
 
 .main {
 	display: flex;
-	background-color: red;
+	background-color: var(--backdrop-color);
 	overflow-x: auto; /* Enables horizontal scrolling within this div */
 	overflow-y: auto; /* Prevents vertical scrolling */
 	position: relative;
 	white-space: nowrap;
+	padding: 0;
+	margin: 0;
 }
 
 .plate {
+	padding:0;
+	margin: 0;
 	height: 100%;
-	background-color: blue;
-}
-
-.board-head {
-	position: sticky;
-	left: 0;
-	z-index: 1; /* Ensures the board-head stays above other elements */
-	background-color: #E5E5E5;
 }
 
 
