@@ -38,7 +38,7 @@ html, body {
 .main {
 	display: flex;
 	background-color: red;
-	overflow-x: hidden; /* Enables horizontal scrolling within this div */
+	overflow-x: auto; /* Enables horizontal scrolling within this div */
 	overflow-y: auto; /* Prevents vertical scrolling */
 	position: relative;
 	white-space: nowrap;
