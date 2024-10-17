@@ -1,0 +1,105 @@
+/* CSS Reset
+ * Based on the reset.css from Andy Bell and 37signals.
+ */
+
+/* Set all elements and pseudo-elements to use the border-box, rather than the default content-box for sizing. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation.
+ * The page looked strangely inflated on mobile landscape devices.
+ * since mobile Safari increases the default font-size when rotating from portrait to landscape.
+ */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh; /* 37 uses dvh, but I'm not sure yet. */
+	font-size: 100%;
+	line-height: 1.5;
+	text-rendering: optimizeSpeed;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+	margin: 0;
+}
+
+/* Help prevent overflow of long words/names/URLs */
+p, li, h1, h2, h3, h4, h5, h6 {
+	word-break: break-word;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* A elements that don't have a class get default styles
+ * This rule is first making sure the text decoration doesn’t interfere with ascenders and descenders.
+ */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+	display: block;
+	max-inline-size: 100%;
+}
+
+/* Inherit fonts for inputs,  buttons, and especially textarea. */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em
+}
+
+
+/* Anything that has been anchored to should have extra scroll margin.
+ * I'm not sure yet.
+ */
+/*:target {*/
+/*	scroll-margin-block: 5ex;*/
+/*}*/
+
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+
+	html {
+		scroll-behavior: initial;
+	}
+}
