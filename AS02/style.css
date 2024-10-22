@@ -1,8 +1,3 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box; /* Include padding in the height */
-}
 
 :root {
 	font-family: "JetBrains Mono", "Source Code Pro", "SF Mono", monospace;
@@ -18,14 +13,6 @@
 }
 
 
-html, body, .shell {
-	width: 100vw;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
-	font-size: 1em;
-	overflow: hidden; /* Prevents the viewport from bouncing */
-}
 
 .shell {
 	display: grid;
@@ -35,7 +22,7 @@ html, body, .shell {
 .head {
 	background-color: var(--theme-color);
 	display: grid;
-	grid-template-columns: 40px 1fr 1fr 1fr 1fr 1fr 40px;
+	grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr 200px;
 }
 .head > div {
 	justify-content: center;
@@ -52,18 +39,19 @@ html, body, .shell {
 }
 .main {
 	display: grid;
-	grid-template-rows: 40px 1fr;
+	grid-template-rows: 1fr;
 	white-space: nowrap;
-	background-color: var(--backdrop-color);
+	background-color: purple;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	margin: 0;
 	padding: 0;
 }
 .neck {
+	height: 40px;
 	display: grid;
 	grid-template-columns:200px repeat(8, 1fr);
-	background-color: var(--backdrop-color);
+	background-color: blue;
 	gap: 5px;
 	white-space: nowrap;
 	padding: 0 10px;
@@ -76,20 +64,27 @@ html, body, .shell {
 	width: 100vw;
 	height: 100%;
 	display: grid;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 40px 1fr;
 	row-gap: 10px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	padding: 0 10px;
+	background-color: yellow;
 }
 
-.plate > div {
+.row {
+	background-color: red;
 	display: grid;
-	grid-template-columns: 160px repeat(8, 1fr);
+	grid-template-columns: 1fr;
 	gap: 5px;
 }
-.plate > div > div {
+.board {
+	min-width: 200px;
+	background-color: white;
 	padding: 0 10px;
+}
+.cell {
+
 }
 
 .date,
@@ -98,10 +93,8 @@ html, body, .shell {
 	min-width: 150px;
 }
 .board-digest > div {
-	height: 200px;
 }
 .board-full > div {
-	height: 1000px;
 }
 
 .board-index {
@@ -111,7 +104,6 @@ html, body, .shell {
 	background-color: #FBFBFB;
 }
 .board-daily {
-	background-color: white;
 }
 .date {
 	height: 100%;
@@ -129,6 +121,7 @@ html, body, .shell {
 }
 details > div,
 summary {
+	font-weight: bold;
 	line-height: 40px;
 	vertical-align: middle;
 	border-top: var(--border-deep);
