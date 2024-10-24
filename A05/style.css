@@ -1,0 +1,60 @@
+
+:root {
+	font-family: "JetBrains Mono", "Source Code Pro", "SF Mono", monospace;
+	font-size: 13px;
+	--font-color-grey: #AAAAAA;
+	--font-weight-bold: 700;
+	--font-weight-medium: 500;
+	--backdrop-color: #EEEEEE;
+	--border-light: #F5F5F5;
+	--border-deep: 1px solid #CCCCCC;
+	--board-background-color: #FBFBFB;
+	--theme-color: #4C5200;
+}
+
+nav > div {
+	justify-content: center;
+	align-content: center;
+	color: var(--font-color-grey);
+	font-weight: 700;
+}
+
+.title, .index {
+	position: sticky;
+	left: 0;
+	z-index: 100;
+}
+.title {
+	height: 40px;
+	line-height: 40px;
+	vertical-align: center;
+}
+details > div,
+summary {
+	font-weight: bold;
+	line-height: 40px;
+	vertical-align: middle;
+	border-top: var(--border-deep);
+	cursor: pointer;
+}
+details > div {
+	padding-left: 10px;
+}
+
+.good {
+	color: green;
+}
+.fail {
+	color:red;
+}
+
+.left {
+	padding-left: 10px;
+	text-align: start;
+}
+.right {
+	padding-right: 10px;
+	text-align: end;
+}
+
+
