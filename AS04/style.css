@@ -1,0 +1,65 @@
+/* Main container with fixed height for scrolling */
+.table-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto;
+    overflow: hidden;
+    width: 1vw;
+}
+
+/* Header section */
+.header-container {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 1fr;
+    background-color: #f3f3f3;
+}
+
+.header-cell {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Body section: Left column and table body are aligned side by side */
+.body-container {
+    display: flex;
+    max-height: 900px; /* Define the height of the scrollable area */
+    overflow: hidden; /* Prevent scrollbars here */
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background-color: #f3f3f3;
+}
+
+.sticky-cell {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Scrollable table body */
+.table-body {
+    overflow: auto; /* Enable scrolling for the main table content */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: calc(
+        100% - 150px
+    ); /* Adjust for the width of the sticky column */
+}
+
+.table-row {
+    display: contents; /* Flatten the row so that cells stay in the grid */
+}
+
+.cell {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    width: 800px;
+    height: 400px;
+}
