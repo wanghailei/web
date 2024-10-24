@@ -1,0 +1,48 @@
+.shell {
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-rows: 40px 1fr;
+}
+
+nav {
+	background-color: var(--theme-color);
+	display: grid;
+	grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr 200px;
+}
+
+:root, .shell, nav, main {
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	background-color: var(--backdrop-color);
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+.plate {
+	height: 100%;
+	display: grid;
+	grid-template-rows: 40px 1fr;
+	background-color: yellow;
+}
+
+.date-row {
+	background-color: var(--backdrop-color);
+}
+
+.unit-row {
+	background-color: red;
+}
+
+.date-row, .unit-row {
+	display: flex;
+	gap: 1em;
+	white-space: nowrap;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}

@@ -12,30 +12,6 @@
 	--theme-color: #4C5200;
 }
 
-.shell {
-	height: 100vh;
-	width: 100vw;
-	display: grid;
-	grid-template-rows: 40px 1fr;
-}
-
-nav {
-	background-color: var(--theme-color);
-	display: grid;
-	grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr 200px;
-}
-
-:root, .shell, nav, main {
-	white-space: nowrap;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-}
-
-main {
-	background-color: var(--backdrop-color);
-}
-
 nav > div {
 	justify-content: center;
 	align-content: center;
@@ -43,77 +19,10 @@ nav > div {
 	font-weight: 700;
 }
 
-.plate {
-	height: 100%;
-	display: grid;
-	grid-template-rows: 40px 1fr;
-	overflow-x: auto;
-	overflow-y: auto;
-	background-color: yellow;
-}
-
-.timeline {
-	height: 40px;
-	background-color: var(--backdrop-color);
-	white-space: nowrap;
-	padding: 0 10px;
-	margin: 0;
-	overflow-x: hidden;
-	overflow-y: hidden;
-}
-
-
-.row {
-	background-color: red;
-}
-
-.timeline, .row {
-	display: flex;
-	gap: 1em;
-}
-.board {
-	max-width: 400px;
-	min-width: 200px;
-	background-color: white;
-	padding: 0 10px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-.cell {
-
-}
 .title, .index {
 	position: sticky;
 	left: 0;
 	z-index: 100;
-}
-
-.date,
-.board-full > div,
-.board-digest > div {
-	min-width: 150px;
-}
-.board-digest > div {
-}
-.board-full > div {
-}
-
-.board-index {
-	background-color: #f5f5f5;
-}
-.board-weekly {
-	background-color: #FBFBFB;
-}
-.board-daily {
-}
-.date {
-	height: 100%;
-	text-align: left;
-	vertical-align: middle;
-	line-height: 40px;
-	padding-left: 10px;
-	color: #AAAAAA;
-	font-weight: var(--font-weight-bold);
 }
 .title {
 	height: 40px;

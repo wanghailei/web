@@ -102,7 +102,7 @@ tbody td:first-child > div {
 thead tr:first-child td {
 	background-color: var(--backdrop-color);
 }
-.timeline td {
+.date-row td {
 	color: var(--font-color-grey);
 	font-weight: var(--font-weight-bold);
 }
