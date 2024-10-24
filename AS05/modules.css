@@ -1,37 +1,7 @@
-.row-head {
-	width: 300px;
-	position: sticky;
-	left: 0;
-	z-index: 100;
-	display: grid;
-	grid-template-columns: 100px 1fr;
-	background-color: brown;
-}
-
-
 .board {
-	min-width: 100px;
 	background-color: white;
 	padding: 0 10px;
 	text-align: right;
-}
-
-.board-index {
-	background-color: #f5f5f5;
-}
-
-.board-date {
-	height: 100%;
-	text-align: left;
-	vertical-align: middle;
-	line-height: 40px;
-	padding-left: 10px;
-	color: #AAAAAA;
-	font-weight: var(--font-weight-bold);
-}
-
-.board-index {
-	background-color: #f5f5f5;
 }
 
 .board-date {
