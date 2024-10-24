@@ -1,15 +1,14 @@
 .board {
 	background-color: white;
+	min-height: var(--board-height-min);
 	padding: 0 10px;
 	text-align: right;
 }
 
-.board-date {
-	height: 100%;
+.date {
 	text-align: left;
 	vertical-align: middle;
 	line-height: 40px;
-	padding-left: 10px;
 	color: #AAAAAA;
 	font-weight: var(--font-weight-bold);
 }
@@ -26,3 +25,12 @@
 	color: white;
 }
 
+details > div,
+summary {
+	display: block;
+	font-weight: bold;
+	line-height: 40px;
+	vertical-align: middle;
+	border-top: var(--border-deep);
+	cursor: pointer;
+}

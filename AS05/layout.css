@@ -11,7 +11,7 @@ header {
 	grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr 200px;
 }
 
-:root, .shell, header, main {
+:root, .shell, header {
 	white-space: nowrap;
 	overflow: hidden;
 	margin: 0;
@@ -26,16 +26,19 @@ main {
 }
 
 
-.date-row {
+.timeline {
 	background-color: var(--backdrop-color);
+	padding: 0 5px;
 }
-.date-row, .unit-row {
+.timeline, .unit-row {
 	display: grid;
 	grid-template-columns: minmax(50px, 100px) minmax(50px, 150px) repeat(8, 1fr);
 	gap: 5px;
 	white-space: nowrap;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	min-height: 150px;
+}
+.unit-row {
 	margin-bottom: 5px;
+	min-height: 150px;
 }
