@@ -41,4 +41,5 @@ main {
 .unit-row {
 	margin-bottom: 5px;
 	min-height: 150px;
+	container-type: inline-size; /* Enable container queries based on the inline axis (width) */
 }

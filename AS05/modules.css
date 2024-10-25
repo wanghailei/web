@@ -1,10 +1,23 @@
 .board {
 	background-color: white;
 	min-height: var(--board-height-min);
-	padding: 0 10px;
-	text-align: right;
 }
-
+.board-data {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-width: 150px;
+	text-align: right;
+	container-type: inline-size; /* Enable container queries based on the inline axis (width) */
+}
+@container (max-width: 300px) {
+	.board-data .first {
+		display: none;
+	}
+	.board-data .last {
+		grid-column: 1 / span 2;
+		background-color: var(--theme-color);
+	}
+}
 .date {
 	text-align: left;
 	vertical-align: middle;
@@ -12,7 +25,13 @@
 	color: #AAAAAA;
 	font-weight: var(--font-weight-bold);
 }
-
+.card {
+	min-height: 100px;
+}
+.income {
+}
+.expense {
+}
 .cell {
 
 }
