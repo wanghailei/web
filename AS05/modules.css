@@ -5,11 +5,11 @@
 .board-data {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	min-width: 150px;
+	min-width: 120px;
 	text-align: right;
 	container-type: inline-size; /* Enable container queries based on the inline axis (width) */
 }
-@container (max-width: 300px) {
+@container (max-width: 240px) {
 	.board-data .first {
 		display: none;
 	}
