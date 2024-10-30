@@ -1,0 +1,78 @@
+.board {
+	background-color: white;
+	min-height: var(--board-height-min);
+}
+.board-data {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-width: 120px;
+	text-align: right;
+	container-type: inline-size; /* Enable container queries based on the inline axis (width) */
+}
+@container (max-width: 240px) {
+	.board-data .first {
+		display: none;
+	}
+	.board-data .last {
+		grid-column: 1 / span 2;
+	}
+}
+.date {
+	text-align: left;
+	vertical-align: middle;
+	line-height: 40px;
+	color: #AAAAAA;
+	font-weight: var(--font-weight-bold);
+}
+.card {
+	min-height: 100px;
+}
+.income {
+}
+.expense {
+}
+.cell {
+
+}
+.dropdown::before {
+	content: "\25BC\00A0\00A0";
+	font-family: Arial, sans-serif;
+}
+.dropdown:hover {
+	cursor: pointer;
+	color: white;
+}
+
+details > div,
+summary {
+	display: block;
+	font-weight: bold;
+	line-height: 40px;
+	vertical-align: middle;
+	border-top: var(--border-deep);
+	cursor: pointer;
+}
+.date-nav {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	background-color: inherit;
+}
+.date-viewport {
+	align-content: center;
+	justify-content: start;
+	padding-left: 10px;
+	cursor: pointer;
+	font-weight: bold;
+}
+button {
+	/*align-items: center; !* centers vertically *!*/
+	/*justify-content: center; !* centers horizontally *!*/
+	border: none;
+	background-color: inherit;
+	cursor: pointer;
+	color: var(--theme-color);
+}
+button:hover {
+	filter: brightness(97%);
+}
