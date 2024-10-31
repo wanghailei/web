@@ -1,3 +1,13 @@
+header > div {
+	justify-content: center;
+	align-content: center;
+	color: var(--font-color-grey);
+	font-weight: 700;
+}
+.logo {
+	justify-self: end;
+}
+
 .board {
 	background-color: white;
 	min-height: var(--board-height-min);
@@ -21,7 +31,7 @@
 	text-align: left;
 	vertical-align: middle;
 	line-height: 40px;
-	color: #AAAAAA;
+	color: #aaaaaa;
 	font-weight: var(--font-weight-bold);
 }
 .card {
@@ -32,7 +42,6 @@
 .expense {
 }
 .cell {
-
 }
 .dropdown::before {
 	content: "\25BC\00A0\00A0";

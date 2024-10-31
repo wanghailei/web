@@ -8,7 +8,7 @@
 header {
 	background-color: var(--theme-color);
 	display: grid;
-	grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr 200px;
+	grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) repeat(8, 1fr);
 }
 
 :root, .shell, header {
@@ -32,7 +32,7 @@ main {
 }
 .timeline, .unit-row {
 	display: grid;
-	grid-template-columns: minmax(50px, 100px) minmax(50px, 150px) repeat(8, 1fr);
+	grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) repeat(8, 1fr);
 	gap: 5px;
 	white-space: nowrap;
 	overflow-x: hidden;
